@@ -1,6 +1,6 @@
-import List from 'https://fgdps.pages.dev/list/js/pages/List.js';
-import Leaderboard from 'https://fgdps.pages.dev/list/js/pages/Leaderboard.js';
-import Roulette from 'https://fgdps.pages.dev/list/js/pages/Roulette.js';
+import List from 'https://freegd.vercel.app/list/js/pages/List.js';
+import Leaderboard from 'https://freegd.vercel.app/list/js/pages/Leaderboard.js';
+import Roulette from 'https://freegd.vercel.app/list/js/pages/Roulette.js';
 
 export default [
     { path: '/', component: List },

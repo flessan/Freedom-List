@@ -1,4 +1,4 @@
-import { round, score } from 'https://fgdps.pages.dev/list/js/score.js';
+import { round, score } from 'https://freegd.vercel.app/list/js/score.js';
 
 /**
  * Path to directory containing `_list.json` and all levels

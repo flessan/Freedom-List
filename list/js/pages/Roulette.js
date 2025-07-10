@@ -1,8 +1,8 @@
-import { fetchList } from 'https://fgdps.pages.dev/list/js/content.js';
-import { getThumbnailFromId, getYoutubeIdFromUrl, shuffle } from 'https://fgdps.pages.dev/list/js/util.js';
+import { fetchList } from 'https://freegd.vercel.app/list/js/content.js';
+import { getThumbnailFromId, getYoutubeIdFromUrl, shuffle } from 'https://freegd.vercel.app/list/js/util.js';
 
-import Spinner from 'https://fgdps.pages.dev/list/js/components/Spinner.js';
-import Btn from 'https://fgdps.pages.dev/list/js/components/Btn.js';
+import Spinner from 'https://freegd.vercel.app/list/js/components/Spinner.js';
+import Btn from 'https://freegd.vercel.app/list/js/components/Btn.js';
 
 export default {
     components: { Spinner, Btn },

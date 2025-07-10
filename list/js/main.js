@@ -1,4 +1,4 @@
-import routes from 'https://fgdps.pages.dev/list/js/routes.js';
+import routes from 'https://freegd.vercel.app/list/js/routes.js';
 
 export const store = Vue.reactive({
     dark: JSON.parse(localStorage.getItem('dark')) || false,
