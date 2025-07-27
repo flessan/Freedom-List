@@ -1,87 +1,346 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreedomGDPS!!11</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreedomGDPS!!11</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ffd600;
+      --primary-dark: #bca600;
+      --bg: #181c25;
+      --bg-alt: #232842;
+      --accent: #2e3650;
+      --text: #fff;
+      --text-muted: #b5b5b5;
+      --radius: 18px;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      background: var(--accent);
+      padding: 24px 0 12px 0;
+      box-shadow: 0 2px 14px #0005;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 2px;
+      text-shadow: 0 1px 8px #0004;
+      float: left;
+    }
+    nav {
+      float: right;
+      margin-top: 10px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 32px;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.07rem;
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.22s, color 0.22s;
+    }
+    nav a:hover {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 86px 0 60px 0;
+      background: linear-gradient(120deg, #272f4a 0%, #181c25 85%);
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: 0 8px 50px #0002;
+    }
+    .hero h1 {
+      font-size: 3.1rem;
+      font-weight: 800;
+      margin-bottom: 17px;
+      color: var(--primary);
+      text-shadow: 0 1px 16px #0003;
+      letter-spacing: 1px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      font-weight: 500;
+    }
+    .cta-button {
+      padding: 16px 44px;
+      background: var(--primary);
+      color: #222;
+      font-weight: bold;
+      border-radius: 32px;
+      font-size: 1.15rem;
+      border: none;
+      outline: none;
+      text-decoration: none;
+      box-shadow: 0 4px 18px #ffd60040;
+      transition: background 0.15s, color 0.15s, box-shadow 0.22s;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .cta-button:hover {
+      background: #fff2a2;
+      color: #111;
+      box-shadow: 0 6px 28px #ffd60050;
+    }
+
+    .features {
+      padding: 60px 0;
+      background: var(--bg-alt);
+      border-radius: var(--radius);
+      margin: 40px 0;
+      box-shadow: 0 2px 32px #0002;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 38px;
+    }
+    .feature-grid {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .feature-card {
+      background: var(--accent);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      width: 285px;
+      text-align: center;
+      box-shadow: 0 4px 22px #0002;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .feature-card .icon {
+      font-size: 2.7rem;
+      margin-bottom: 18px;
+      text-shadow: 0 1px 8px #0003;
+    }
+    .feature-card h3 {
+      color: var(--primary);
+      font-size: 1.15rem;
+      margin-bottom: 13px;
+      margin-top: 0;
+    }
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 1.01rem;
+      margin: 0;
+    }
+
+    .about, .contact {
+      padding: 50px 0;
+      background: var(--bg);
+    }
+    .about h2, .contact h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 22px;
+      font-size: 2rem;
+    }
+    .about p {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.09rem;
+      margin: 0 auto;
+      max-width: 650px;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 18px;
+    }
+    .contact input, .contact textarea {
+      padding: 13px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      background: var(--bg-alt);
+      color: var(--text);
+      box-shadow: 0 2px 14px #0001;
+      resize: none;
+    }
+    .contact input::placeholder, .contact textarea::placeholder {
+      color: #aaa;
+    }
+    .contact button {
+      padding: 13px;
+      background: var(--primary);
+      color: #181c25;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.06rem;
+      transition: background 0.13s;
+    }
+    .contact button:hover {
+      background: #fff2a2;
+    }
+
+    .social-links {
+      margin-top: 10px;
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+    }
+    .social-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.18s;
+      font-size: 1.13rem;
+    }
+    .social-links a:hover {
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 22px 0 10px 0;
+      background: var(--accent);
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: auto;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+
+    @media (max-width: 800px) {
+      .feature-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul {
+        gap: 18px;
+      }
+      .logo {
+        font-size: 1.7rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">FreedomGDPS!!11</div>
-            <nav>
-                <ul>
-                    <li><a href="#features">Fitur</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <div class="container clearfix">
+      <div class="logo">FreedomGDPS!!11</div>
+      <nav>
+        <ul>
+          <li><a href="#features">Fitur</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>FreedomGDPS!!11</h1>
-            <p>Platform game developer independen terbaik untuk membuat game impianmu!</p>
-            <a href="#features" class="cta-button">Mulai Sekarang</a>
-        </div>
-    </section>
+  <section class="hero">
+    <div class="container">
+      <h1>FreedomGDPS!!11</h1>
+      <p>Buat server Geometry Dash pribadi, sepenuhnya gratis & mudah digunakan. Nikmati fitur modern, komunitas aktif, dan kendali penuh!</p>
+      <a href="#features" class="cta-button">Mulai Sekarang</a>
+    </div>
+  </section>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Fitur Unggulan</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="icon">🎮</div>
-                    <h3>Game Engine Modern</h3>
-                    <p>Engine canggih dengan performa tinggi untuk pengembangan game 2D & 3D</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">📱</div>
-                    <h3>Multi-Platform</h3>
-                    <p>Deploy ke semua platform populer dengan satu kode sumber</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon">🚀</div>
-                    <h3>Publishing Otomatis</h3>
-                    <p>Proses publish game ke App Store dan Google Play dengan satu klik</p>
-                </div>
-            </div>
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Fitur Unggulan</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="icon">🎮</div>
+          <h3>Engine GDPS Modern</h3>
+          <p>Performa tinggi, anti lag, dan stabil untuk server Geometry Dash-mu.</p>
         </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Tentang FreedomGDPS</h2>
-            <p>FreedomGDPS!!11 adalah platform pengembangan game yang dirancang untuk memberdayakan developer independen. Dengan berbagai alat canggih dan komunitas yang solid, kami membantu Anda mewujudkan ide game menjadi kenyataan.</p>
+        <div class="feature-card">
+          <div class="icon">📱</div>
+          <h3>Multi-Platform</h3>
+          <p>Akses lewat semua perangkat—Android, iOS, dan web!</p>
         </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Hubungi Kami</h2>
-            <form>
-                <input type="text" placeholder="Nama Lengkap" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Pesan" rows="4" required></textarea>
-                <button type="submit">Kirim Pesan</button>
-            </form>
+        <div class="feature-card">
+          <div class="icon">🚀</div>
+          <h3>Deploy Otomatis</h3>
+          <p>Server langsung online tanpa ribet, cukup 1 klik!</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 FreedomGDPS!!11. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">Twitter</a>
-                <a href="#">Discord</a>
-                <a href="#">GitHub</a>
-            </div>
-        </div>
-    </footer>
+  <section id="about" class="about">
+    <div class="container">
+      <h2>Tentang FreedomGDPS</h2>
+      <p>
+        FreedomGDPS!!11 adalah platform pengembangan server Geometry Dash privat yang ramah pemula maupun pro. Didukung komunitas solid & fitur canggih, kamu bisa bebas berkarya, mengelola, dan berbagi level tanpa batas.
+      </p>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Hubungi Kami</h2>
+      <form>
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Pesan" rows="4" required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+      <div class="social-links">
+        <a href="#">Twitter</a>
+        <a href="#">Discord</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 FreedomGDPS!!11. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
