@@ -1,49 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>plusgdps.dev clone</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreedomGDPS!!11</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">plusgdps.dev</div>
-      <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#download">Download</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="hero">
-      <h1>Recreating plusgdps.dev</h1>
-      <p>Tampilan dan fungsi statis serupa</p>
-      <button id="cta-btn">Get Started</button>
-    </section>
-    <section id="features">
-      <h2>Features</h2>
-      <div class="feature-list">
-        <div class="feature-item">
-          <h3>Fast</h3>
-          <p>Optimal performance and lightweight</p>
+    <header>
+        <div class="container">
+            <div class="logo">FreedomGDPS!!11</div>
+            <nav>
+                <ul>
+                    <li><a href="#features">Fitur</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="feature-item">
-          <h3>Secure</h3>
-          <p>Secure by design</p>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>FreedomGDPS!!11</h1>
+            <p>Platform game developer independen terbaik untuk membuat game impianmu!</p>
+            <a href="#features" class="cta-button">Mulai Sekarang</a>
         </div>
-      </div>
     </section>
-    <section id="download">
-      <h2>Download</h2>
-      <button>Download Now</button>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Fitur Unggulan</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">🎮</div>
+                    <h3>Game Engine Modern</h3>
+                    <p>Engine canggih dengan performa tinggi untuk pengembangan game 2D & 3D</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📱</div>
+                    <h3>Multi-Platform</h3>
+                    <p>Deploy ke semua platform populer dengan satu kode sumber</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>Publishing Otomatis</h3>
+                    <p>Proses publish game ke App Store dan Google Play dengan satu klik</p>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
-  <footer id="contact">
-    <p>Contact us at <a href="mailto:info@plusgdps.dev">info@plusgdps.dev</a></p>
-  </footer>
-  <script src="script.js"></script>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Tentang FreedomGDPS</h2>
+            <p>FreedomGDPS!!11 adalah platform pengembangan game yang dirancang untuk memberdayakan developer independen. Dengan berbagai alat canggih dan komunitas yang solid, kami membantu Anda mewujudkan ide game menjadi kenyataan.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <form>
+                <input type="text" placeholder="Nama Lengkap" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Pesan" rows="4" required></textarea>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 FreedomGDPS!!11. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">Discord</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
