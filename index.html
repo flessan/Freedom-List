@@ -1,21 +1,49 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FRGDPS</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>plusgdps.dev clone</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>Selamat datang di FRGDPS</h1>
-    <p>Website ini dideploy lewat <strong>Cloudflare Pages</strong>.</p>
+    <nav class="navbar">
+      <div class="logo">plusgdps.dev</div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <button id="tombol-aktif" onclick="halo()">Klik Aku</button>
-
-  <div id="hasil"></div>
-
+  <main>
+    <section id="hero">
+      <h1>Recreating plusgdps.dev</h1>
+      <p>Tampilan dan fungsi statis serupa</p>
+      <button id="cta-btn">Get Started</button>
+    </section>
+    <section id="features">
+      <h2>Features</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <h3>Fast</h3>
+          <p>Optimal performance and lightweight</p>
+        </div>
+        <div class="feature-item">
+          <h3>Secure</h3>
+          <p>Secure by design</p>
+        </div>
+      </div>
+    </section>
+    <section id="download">
+      <h2>Download</h2>
+      <button>Download Now</button>
+    </section>
+  </main>
+  <footer id="contact">
+    <p>Contact us at <a href="mailto:info@plusgdps.dev">info@plusgdps.dev</a></p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
