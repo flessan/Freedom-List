@@ -1,44 +1,17 @@
+/* Base Style */
 body {
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0;
-    background: linear-gradient(145deg, #1f1f1f, #2c2c2c);
-    color: #dddddd;
+    background: rgb(24, 24, 24);
+    color: #e0e0e0;
     font-family: Outfit, sans-serif;
     text-align: center;
     height: 100vh;
     overflow-x: hidden;
-}
-
-h1, h2, h3, p, .goldtext {
-    background: linear-gradient(90deg, #aaaaaa, #e0e0e0, #aaaaaa);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: grayGradient 8s ease infinite;
-}
-
-.textanimated {
-    white-space: nowrap;
-    background: linear-gradient(90deg, #888888, #bdbdbd, #aaaaaa);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: grayGradient 5s linear infinite;
-    filter: drop-shadow(0 0 5px rgba(200, 200, 200, 0.1));
-}
-
-@keyframes grayGradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    opacity: 0;
+    animation: fadeInBody 1s ease forwards;
 }
 
 h1 {
@@ -60,13 +33,13 @@ p {
     font-weight: 300;
 }
 
+h1, h2, h3, p {
+    margin: 0;
+}
+
 h2 i {
     font-size: 22px;
     margin-right: 8px;
-}
-
-h1, h2, h3, p {
-    margin: 0;
 }
 
 .content {
@@ -80,21 +53,18 @@ h1, h2, h3, p {
 
 .specialcontainer {
     width: fit-content;
-    background: linear-gradient(135deg, #2f2f2f, #3a3a3a);
-    border: 2px solid #5e5e5e;
-    color: #e0e0e0;
-    cursor: pointer;
+    background-color: rgba(58, 58, 58, 0.6);
+    border: 4px solid #aaa;
     border-radius: 20px;
     padding: 8px 20px;
     margin: 8px 12px;
     display: flex;
-    transition: 0.3s ease;
     align-items: center;
-}
-
-.specialcontainer:hover {
-    background: linear-gradient(135deg, #444444, #2a2a2a);
-    transform: scale(1.03);
+    cursor: pointer;
+    transition: 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
 }
 
 .specialcontainer i {
@@ -111,6 +81,13 @@ h1, h2, h3, p {
 
 .specialcontainer a {
     text-decoration: none !important;
+    color: inherit;
+}
+
+.specialcontainer:hover {
+    background-color: rgba(100, 100, 100, 0.6);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    transform: scale(1.03);
 }
 
 i {
@@ -118,7 +95,6 @@ i {
     cursor: pointer;
     transition: 0.25s;
     font-size: 38px;
-    color: #ccc;
 }
 
 .specialcontainer2 div {
@@ -139,21 +115,19 @@ i {
     margin: 0;
     font-weight: 400;
     cursor: pointer;
-    background: linear-gradient(90deg, #333, #444);
+    background-color: rgba(255, 255, 255, 0.08);
     padding: 10px 15px;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    color: #ddd;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     transition: 0.3s ease;
 }
 
 .navbar p:hover {
-    background: linear-gradient(90deg, #555, #333);
-}
-
-.navbar a {
-    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .dropdown {
@@ -165,29 +139,36 @@ i {
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: rgba(30, 30, 30, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
     z-index: 1;
-    background-color: #2b2b2b;
-    border-radius: 10px;
-    overflow: hidden;
 }
 
 .dropdown-content a {
-    color: #eee;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin: 4px 0;
     padding: 12px 16px;
-    text-decoration: none;
+    border-radius: 8px;
     display: block;
-    transition: background 0.2s;
+    text-decoration: none;
+    transition: 0.25s;
 }
 
 .dropdown-content a:hover {
-    background-color: #444;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
 }
 
 .dropdown p i {
     font-size: 22px;
     margin-left: 8px;
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 .dropdown:hover p i {
@@ -198,30 +179,42 @@ i {
     display: block;
 }
 
+.textanimated {
+    white-space: nowrap;
+    background: linear-gradient(180deg, #ddd, #aaa, #eee, #bbb, #ddd);
+    background-size: auto 200%;
+    filter: contrast(130%) drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.2));
+    -webkit-text-fill-color: transparent;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    animation: textanimation 2s infinite linear;
+}
+
+@keyframes textanimation {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 0% 200%;
+    }
+}
+
 .welcometext {
     margin-top: 35px;
     font-size: 55px;
     cursor: default;
-}
-
-.sitetransition {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    display: none;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
-    scale: 1;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 a {
     color: inherit;
     text-decoration: underline;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ddd;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 .dashboard {
@@ -232,18 +225,21 @@ a {
 .dashboardlist {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    background: #1a1a1a;
+    background: rgba(32, 32, 32, 0.6);
+    backdrop-filter: blur(10px);
 }
 
-.dashboardlist h2 {
+.dashboardlist h2,
+.dashboardlist h3 {
     user-select: none;
     padding: 8px 12px;
-    border-bottom: 2px solid #2e2e2e;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
     cursor: pointer;
+    transition: 0.2s;
 }
 
-.dashboardlist div:first-child h2 {
-    border-top: 0;
+.dashboardlist h3:last-child {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
 }
 
 .tools {
@@ -251,44 +247,35 @@ a {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     flex: 1;
-    background: #222;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-}
-
-.dashboardlist h3 {
-    user-select: none;
-    padding: 6px;
-    cursor: pointer;
-    color: #ccc;
-}
-
-.dashboardlist h3:last-child {
-    border-bottom: 2px solid #2e2e2e;
-}
-
-.nojstext {
-    display: inline;
-    color: #888;
-}
-
-.customtweak {
-    font-size: 0;
+    background: rgba(26, 26, 26, 0.7);
+    backdrop-filter: blur(8px);
 }
 
 .tools div {
-    height: calc(100vh - 40px - 152px);
+    height: calc(100vh - 152px - 40px);
     justify-content: center;
 }
 
 iframe {
     border: none;
     height: 100%;
+    width: 100%;
 }
 
 .goldtext {
-    color: #c8b88a;
+    color: #ccc;
+}
+
+.nojstext {
+    display: inline;
+    color: black;
+}
+
+.customtweak {
+    font-size: 0;
 }
 
 .buttons-div {
@@ -299,7 +286,6 @@ iframe {
 
 footer {
     margin-bottom: 10px;
-    color: #777;
 }
 
 .install-br {
@@ -319,5 +305,11 @@ footer {
     }
     .install-br {
         display: block !important;
+    }
+}
+
+@keyframes fadeInBody {
+    to {
+        opacity: 1;
     }
 }
